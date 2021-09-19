@@ -15,3 +15,4 @@ public class Badges {
     private AttachmentsByType attachments;
 }
 
+
