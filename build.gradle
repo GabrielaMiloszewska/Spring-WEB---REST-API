@@ -17,12 +17,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.4'
-	//implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.4'
+	// implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.4'
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.4'
 	implementation 'org.springframework.boot:spring-boot-starter-mail:2.5.4'
 
-	//runtimeOnly 'mysql:mysql-connector-java:8.0.26'
-	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.26'
+	// runtimeOnly 'org.postgresql:postgresql'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.4') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -34,6 +34,12 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
 }
 
 test {
