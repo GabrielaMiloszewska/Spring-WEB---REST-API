@@ -21,8 +21,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.4'
 	//implementation 'org.springframework.boot:spring-boot-starter-mail:2.5.4'
 
-	// runtimeOnly 'mysql:mysql-connector-java:8.0.26'
-	runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.26'
+	// runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.4') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
