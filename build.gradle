@@ -22,9 +22,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail:2.5.4'
 	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'junit:junit:4.13.1'
 
 
-	runtimeOnly 'mysql:mysql-connector-java:8.0.26'
+    runtimeOnly 'mysql:mysql-connector-java:8.0.26'
 	// runtimeOnly 'org.postgresql:postgresql:42.2.23.jre7'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.4') {
