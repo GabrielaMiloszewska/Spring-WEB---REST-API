@@ -35,7 +35,8 @@ public class SimpleEmailService {
         //dla List<String> toCc:
         //Optional<List> optionalCc = Optional.ofNullable(mail.getToCc());
         //optionalCc.ifPresent(m -> mailMessage.setCc(String.valueOf(mail.getToCc())));
-        Optional.ofNullable(mail.getToCc()).ifPresent(mailMessage::setCc);
+
+        Optional.ofNullable(mail.getToCc()).ifPresent(m -> mailMessage.setCc(String.valueOf(mail.getToCc())));
 
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
