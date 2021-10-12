@@ -7,8 +7,6 @@ import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -21,8 +19,9 @@ public class SimpleEmailService {
     public void send(final Mail mail) {
         log.info("Starting email preparation...");
         try {
-            SimpleMailMessage mailMessage = createMailMessage(mail);
-            javaMailSender.send(mailMessage);
+            //SimpleMailMessage mailMessage = createMailMessage(mail);
+            //javaMailSender.send(mailMessage);
+            javaMailSender.send(createMailMessage(mail));
             log.info("Email has been sent.");
         } catch (MailException e) {
             log.error("Failed to process email sending: " + e.getMessage(), e);
@@ -33,8 +32,10 @@ public class SimpleEmailService {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
 
-        Optional<List> optionalCc = Optional.ofNullable(mail.getToCc());
-        optionalCc.ifPresent(m -> mailMessage.setCc(String.valueOf(mail.getToCc())));
+        //dla List<String> toCc:
+        //Optional<List> optionalCc = Optional.ofNullable(mail.getToCc());
+        //optionalCc.ifPresent(m -> mailMessage.setCc(String.valueOf(mail.getToCc())));
+        Optional.ofNullable(mail.getToCc()).ifPresent(mailMessage::setCc);
 
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
