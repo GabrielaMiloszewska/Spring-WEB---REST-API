@@ -22,6 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail:2.5.5'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.5'
 
+	// swaggera nie aktualizować - najnowsza wersja nie działała u mnie
 	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 
@@ -34,12 +35,16 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.5') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	compileOnly 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-	testCompileOnly 'org.projectlombok:lombok:1.18.20'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testCompileOnly 'org.projectlombok:lombok:1.18.22'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.5'
+
 }
 
 test {
